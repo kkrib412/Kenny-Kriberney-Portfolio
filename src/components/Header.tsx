@@ -65,7 +65,7 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
         >
           <Hammer className="w-5 h-5 text-brand-orange group-hover:rotate-12 transition-transform duration-200" />
           <span className="font-bold text-zinc-100 group-hover:text-brand-orange transition-colors">
-            KR
+            KK
           </span>
           <span className="text-dark-muted font-normal">//</span>
           <span className="text-zinc-400 font-medium tracking-wide">AI_FORGE</span>

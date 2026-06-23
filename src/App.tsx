@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -6,12 +6,24 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Timeline from "./components/Timeline";
 import Contact from "./components/Contact";
+import SkeletonLoader from "./components/SkeletonLoader";
 import { Terminal, Cpu, Database, FolderGit2, History, Mail } from "lucide-react";
 
 export type TabType = "story" | "projects" | "capabilities" | "contact";
 
 export default function App() {
   const [activeTab, setActiveTab ] = useState<TabType>("projects"); // Default to projects for high immediate impact, or story
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  // Trigger high-fidelity calibrating skeleton state upon Tab navigation/initialization
+  useEffect(() => {
+    setIsLoading(true);
+    const serverCalibrationTimer = setTimeout(() => {
+      setIsLoading(false);
+    }, 450); // Highly satisfying and authentic terminal feedback loader delay
+    
+    return () => clearTimeout(serverCalibrationTimer);
+  }, [activeTab]);
 
   return (
     <div className="min-h-screen bg-dark-bg text-zinc-300 font-sans selection:bg-brand-orange selection:text-white relative overflow-x-hidden">
@@ -86,32 +98,52 @@ export default function App() {
 
         {/* Dynamic content rendering depending on chosen Calibration tab */}
         <div className="relative min-h-[40vh] transition-all">
-          {activeTab === "story" && (
+          {isLoading ? (
             <div className="animate-fade-in">
-              <About />
+              <SkeletonLoader tab={activeTab} />
             </div>
-          )}
+          ) : (
+            <>
+              {activeTab === "story" && (
+                <div className="animate-fade-in">
+                  <About />
+                </div>
+              )}
 
-          {activeTab === "projects" && (
-            <div className="animate-fade-in">
-              <Projects />
-            </div>
-          )}
+              {activeTab === "projects" && (
+                <div className="animate-fade-in">
+                  <Projects />
+                </div>
+              )}
 
-          {activeTab === "capabilities" && (
-            <div className="animate-fade-in">
-              <Skills />
-              <Timeline />
-            </div>
-          )}
+              {activeTab === "capabilities" && (
+                <div className="animate-fade-in">
+                  <Skills />
+                  <Timeline />
+                </div>
+              )}
 
-          {activeTab === "contact" && (
-            <div className="animate-fade-in">
-              <Contact />
-            </div>
+              {activeTab === "contact" && (
+                <div className="animate-fade-in">
+                  <Contact />
+                </div>
+              )}
+            </>
           )}
         </div>
       </main>
+
+      {/* Persistent System Status Indicator */}
+      <div 
+        id="system-status-indicator" 
+        className="fixed bottom-4 right-4 z-50 flex items-center space-x-2.5 font-mono text-[10px] tracking-wider text-zinc-400 border border-dark-border bg-dark-bg/80 backdrop-blur-md py-1.5 px-3 rounded-full shadow-lg pointer-events-auto"
+      >
+        <span className="flex h-2 w-2 relative">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+        </span>
+        <span className="text-zinc-300 font-medium">SYS_STATUS: ACTIVE</span>
+      </div>
     </div>
   );
 }
