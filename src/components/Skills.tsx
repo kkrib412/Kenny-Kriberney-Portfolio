@@ -1,12 +1,51 @@
 import React from "react";
 import { skillGroups } from "../data";
-import { Cpu, Layout, Database, Wrench, Shield } from "lucide-react";
+import { 
+  Cpu, 
+  Layout, 
+  Database, 
+  Wrench, 
+  Shield, 
+  Smartphone, 
+  Code, 
+  Paintbrush, 
+  Activity, 
+  CreditCard, 
+  Mail, 
+  Server, 
+  Github, 
+  Terminal, 
+  Share2, 
+  Layers
+} from "lucide-react";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Cpu: Cpu,
   Layout: Layout,
   Database: Database,
-  Wrench: Wrench
+  Wrench: Wrench,
+  Smartphone: Smartphone
+};
+
+// Map specific key skills to beautiful inline indicator icons for visual variety
+const skillIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  "TypeScript": Code,
+  "Next.js 15 (App Router)": Layers,
+  "React 19": Layers,
+  "Tailwind CSS v4": Paintbrush,
+  "Motion (Framer)": Activity,
+  "Anthropic Claude SDK": Cpu,
+  "OpenRouter": Share2,
+  "Resend API": Mail,
+  "Stripe Billing Integrations": CreditCard,
+  "Supabase": Database,
+  "PostgreSQL": Server,
+  "Git / GitHub Versioning": Github,
+  "Linux Environments": Terminal,
+  "Kotlin": Smartphone,
+  "Jetpack Compose": Layout,
+  "Google Lyria API": Cpu,
+  "SQLite & Room DB": Database,
 };
 
 export default function Skills() {
@@ -26,7 +65,7 @@ export default function Skills() {
               Grounded Tech Capabilities
             </h2>
             <p className="text-zinc-500 font-sans text-sm max-w-xl">
-              From hardware-level systems and diagnostic logic, to responsive React frameworks, secure backends, and prompt engineering protocols.
+              From native mobile systems & hardware-level diagnostic logic, to responsive React frameworks, secure backends, and prompt engineering protocols.
             </p>
           </div>
           
@@ -64,14 +103,18 @@ export default function Skills() {
 
                   {/* Skills Pills List */}
                   <div className="flex flex-wrap gap-2">
-                    {group.skills.map((skill, idx) => (
-                      <span
-                        key={idx}
-                        className="font-mono text-xs text-zinc-300 bg-dark-bg/60 hover:text-white hover:bg-dark-border/40 border border-dark-border px-3 py-1.5 rounded transition-all duration-150 cursor-default select-none hover:border-brand-orange/40"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+                    {group.skills.map((skill, idx) => {
+                      const SkillIcon = skillIconMap[skill];
+                      return (
+                        <span
+                          key={idx}
+                          className="font-mono text-xs text-zinc-300 bg-dark-bg/60 hover:text-white hover:bg-dark-border/40 border border-dark-border px-3 py-1.5 rounded transition-all duration-150 cursor-default select-none hover:border-brand-orange/40 flex items-center space-x-1.5"
+                        >
+                          {SkillIcon && <SkillIcon className="w-3.5 h-3.5 text-brand-orange/70 shrink-0" />}
+                          <span>{skill}</span>
+                        </span>
+                      );
+                    })}
                   </div>
                 </div>
 

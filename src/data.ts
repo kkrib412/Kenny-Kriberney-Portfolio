@@ -15,7 +15,8 @@ export const projects: Project[] = [
       "Stripe Integration: Secure subscription webhook handler with trials, grace periods, and customer self-serve billing.",
       "Supabase Row-Level Security: Bulletproof data multi-tenancy separating private analytics between clients."
     ],
-    githubUrl: "https://github.com/kkrib412/ai-forge-saas"
+    githubUrl: "https://github.com/kkrib412/ai-forge-saas",
+    liveUrl: "https://theaiforge.com"
   },
   {
     id: "embeddable-chatbot",
@@ -29,7 +30,8 @@ export const projects: Project[] = [
       "Real-time Lead Capture: Persists contact info directly to lead table with instant notification alerts.",
       "Automatic Context Priming: Inject custom prompt rules before user starts a chat, tailored per client profile ID."
     ],
-    githubUrl: "https://github.com/kkrib412/embeddable-chatbot"
+    githubUrl: "https://github.com/kkrib412/embeddable-chatbot",
+    liveUrl: "https://theaiforge.com/chatbot-widget"
   },
   {
     id: "supabase-saas-starter",
@@ -43,7 +45,68 @@ export const projects: Project[] = [
       "Aurora Glow Engine: Subtle hardware-accelerated animated orbs and shimmering headers rendering at steady 60 FPS.",
       "Database Seeding scripts: CLI workflows to auto-build secure tenant patterns, user profiles, and subscription plans."
     ],
-    githubUrl: "https://github.com/kkrib412/supabase-saas-starter"
+    githubUrl: "https://github.com/kkrib412/supabase-saas-starter",
+    liveUrl: "https://github.com/kkrib412/supabase-saas-starter"
+  },
+  {
+    id: "riffmind-ai",
+    name: "RiffMind AI",
+    description: "AI-powered jam partner that analyzes live guitar riffs and generates real-time backing tracks.",
+    detailedDescription: "A cutting-edge native Android music application created to serve as an interactive jam companion. It continuously listens to microphone inputs, detects key signatures, BPM, and complex chord riffs in real-time, and leverages the Google Lyria API and generative synthesizers to stream harmonious, full-instrument backing tracks on the fly.",
+    tags: ["Kotlin", "Jetpack Compose", "Google Lyria API", "Android AudioRecord", "TensorFlow Lite"],
+    isMobileApp: true,
+    metrics: "Production Native Android App",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with your actual video or Loom walkthrough URL!
+    screenshots: [
+      "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=400&q=80", // Guitar live session
+      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=400&q=80"  // Audio waves
+    ],
+    features: [
+      "Real-time Riff Analysis: Low-latency FFT chord recognition and transient detection using custom TensorFlow Lite models on-device.",
+      "Google Lyria Integration: Dynamic prompt-based musical seed generation, blending synthetic guitars and live drums into rich audio segments.",
+      "Jetpack Compose Canvas: Fully hardware-accelerated audio wave visualizer and responsive radial dials designed for live stage setups.",
+      "Offline Mode Capability: Generates basic MIDI-backed drum loops even under zero-network conditions."
+    ],
+    githubUrl: "https://github.com/kkrib412/riffmind-ai",
+    liveUrl: "https://github.com/kkrib412/riffmind-ai/releases/tag/v1.0.0-apk"
+  },
+  {
+    id: "echo-mobile",
+    name: "ECHO",
+    description: "Digital living room for your family's greatest hits.",
+    detailedDescription: "A private family archiving application designed to capture, organize, and celebrate precious multi-generational milestones. ECHO provides private, end-to-end encrypted voice message boards, synchronous real-time audio playback, and generative memories scrapbooks using native Kotlin and elegant Compose design patterns.",
+    tags: ["Kotlin", "Jetpack Compose", "WebSockets", "Room DB", "AWS S3", "E2E Encryption"],
+    isMobileApp: true,
+    metrics: "Closed Beta · Play Store & TestFlight",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with family app beta walkthrough
+    screenshots: [
+      "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=400&q=80", // Audio board
+      "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=400&q=80"  // Family timeline
+    ],
+    features: [
+      "End-to-End Cryptography: Secure SQLite (SQLCipher) and payload encryption ensuring family conversations remain completely private.",
+      "Synchronous Playback: Real-time family living room radio feature allowing synchronized voice message listening across devices.",
+      "Intelligent Chronology: Automatic context tagging that maps uploaded voice notes to corresponding historic events in a visual timeline."
+    ],
+    githubUrl: "https://github.com/kkrib412/echo-mobile",
+    liveUrl: "https://testflight.apple.com/join/echo-mobile-beta"
+  },
+  {
+    id: "oral-history-concept",
+    name: "Android Oral History App Concept",
+    description: "A Kotlin + Jetpack Compose prototype preserving elderly oral histories using native audio and AI transcripts.",
+    detailedDescription: "A mobile-first system designed to bridge generations. Concepted and architecturalized to record continuous conversational voice, chunk audio payloads efficiently, and transcribe them using the Claude API to form coherent, categorized timeline chapters of ancestral memories.",
+    tags: ["Kotlin", "Jetpack Compose", "Android SDK", "Claude API", "Audio Recording"],
+    isMobileApp: true,
+    metrics: "Architecture Concept & Build Prompt Ready",
+    videoUrl: "", // Concept / text architectural diagram
+    features: [
+      "Chunked Upload Routing: Technical workflow explaining real-time API streaming of heavy PCM voice streams.",
+      "Semantic Structuring: Engine configuration parsing transcribed paragraphs into dynamic family tree chronologies.",
+      "Adaptive Offline Sync: Local SQLite schema layout allowing users to record interviews offline in low-connectivity zones."
+    ],
+    githubUrl: "https://github.com/kkrib412/oral-history-app",
+    liveUrl: "https://github.com/kkrib412/oral-history-app"
   },
   {
     id: "options-flow-digest",
@@ -72,20 +135,6 @@ export const projects: Project[] = [
       "Audit Engine Templates: Step-by-step systems designed to crawl structure, analyze keywords, and plan landing pages."
     ],
     githubUrl: "https://github.com/kkrib412/hermes-agent-library"
-  },
-  {
-    id: "oral-history-concept",
-    name: "Android Oral History App Concept",
-    description: "A Kotlin + Jetpack Compose prototype preserving elderly oral histories using native audio and AI transcripts.",
-    detailedDescription: "A mobile-first system designed to bridge generations. Concepted and architecturalized to record continuous conversational voice, chunk audio payloads efficiently, and transcribe them using the Claude API to form coherent, categorized timeline chapters of ancestral memories.",
-    tags: ["Kotlin", "Jetpack Compose", "Android SDK", "Claude API", "Audio Recording"],
-    metrics: "Architecture Concept & Build Prompt Ready",
-    features: [
-      "Chunked Upload Routing: Technical workflow explaining real-time API streaming of heavy PCM voice streams.",
-      "Semantic Structuring: Engine configuration parsing transcribed paragraphs into dynamic family tree chronologies.",
-      "Adaptive Offline Sync: Local SQLite schema layout allowing users to record interviews offline in low-connectivity zones."
-    ],
-    githubUrl: "https://github.com/kkrib412/oral-history-app"
   }
 ];
 
@@ -94,6 +143,11 @@ export const skillGroups: SkillGroup[] = [
     category: "AI & APIs",
     skills: ["Anthropic Claude SDK", "OpenRouter", "Tradier Market API", "Resend API", "Prompt Engineering", "Semantic Chunking", "Structured Outputs"],
     icon: "Cpu"
+  },
+  {
+    category: "Mobile Engineering",
+    skills: ["Kotlin", "Jetpack Compose", "Android SDK", "Google Lyria API", "CoreAudio / AudioRecord", "SQLite & Room DB", "StateFlow & Coroutines"],
+    icon: "Smartphone"
   },
   {
     category: "Frontend Stack",

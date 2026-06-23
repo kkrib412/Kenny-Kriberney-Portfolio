@@ -6,6 +6,10 @@ export interface Project {
   tags: string[];
   githubUrl: string;
   isSaaSProduct?: boolean;
+  isMobileApp?: boolean;
+  liveUrl?: string;
+  videoUrl?: string;
+  screenshots?: string[];
   metrics?: string;
   features?: string[];
 }
