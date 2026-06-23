@@ -4,6 +4,8 @@ From the trades to AI tooling — portfolio of a self-taught developer and found
 
 ## About
 
+Outcome: frames a self-taught Security Ops → AI automation career path for Pittsburgh-area hiring managers.
+
 Security Ops Tech transitioning into IT Support and AI tooling. Focused on practical automation, local AI workflows, and trading systems.
 
 ## Selected repos
