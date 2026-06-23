@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand-orange: #E8602C;
+  --color-brand-orange-light: #F27F51;
+  --color-dark-bg: #020408;
+  --color-dark-card: #05070a;
+  --color-dark-border: rgba(255, 255, 255, 0.05);
+  --color-dark-muted: #52525b;
+}
+
+/* Custom animations and background patterns with Immersive Quantum vibes */
+@layer utilities {
+  .grid-pattern {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(59, 130, 246, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(59, 130, 246, 0.02) 1px, transparent 1px);
+  }
+  .dot-pattern {
+    background-size: 20px 20px;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  }
+  .quantum-glow-blue {
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.15);
+  }
+  .quantum-glow-orange {
+    box-shadow: 0 0 25px rgba(232, 96, 44, 0.15);
+  }
+}
+
+/* Scrollbar customization matching cosmic viewport */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #020408;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E8602C;
+}
+
