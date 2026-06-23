@@ -1,20 +1,27 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Kenny-Kriberney-Portfolio
 
-# Run and deploy your AI Studio app
+From the trades to AI tooling — portfolio of a self-taught developer and founder of The AI Forge.
 
-This contains everything you need to run your app locally.
+## About
 
-View your app in AI Studio: https://ai.studio/apps/69df6ca0-d94f-47f0-a083-05c3d6c724b4
+Security Ops Tech transitioning into IT Support and AI tooling. Focused on practical automation, local AI workflows, and trading systems.
 
-## Run Locally
+## Selected repos
 
-**Prerequisites:**  Node.js
+- automation-watchdog — AI workflow health monitoring
+- options-flow-tracker — Tradier API options flow scanner
+- Dev-Portfolio — developer portfolio builder
 
+## Tech stack
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- TypeScript
+- React
+- Python
+- Supabase
+- Vercel / GitHub Pages
+
+## Contact
+
+- Email: kennykriberney@gmail.com
+- Location: Pittsburgh, PA
+- GitHub: https://github.com/kkrib412
